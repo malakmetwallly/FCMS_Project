@@ -1,0 +1,45 @@
+﻿@page "{memberId:int}"
+@model AssignPlanModel
+
+<h2>Assign Plan</h2>
+
+<form method="post">
+	<input type="hidden" asp-for="MemberID" />
+
+	<div class="mb-3">
+		<label class="form-label">Plan Type</label>
+		<select asp-for="PlanType" class="form-control">
+			<option value="Workout">Workout Plan</option>
+			<option value="Diet">Diet Plan</option>
+		</select>
+	</div>
+
+	
+
+	<div id="WorkoutSection">
+		<h4>Workout Details</h4>
+
+		<label>Weekly Schedule:</label>
+		<textarea class="form-control" asp-for="Weekly_Schedule" rows="4"></textarea>
+
+		<label class="mt-2">Focus Area:</label>
+		<input type="text" class="form-control" asp-for="Focus_Area" />
+	</div>
+
+
+
+	<div id="DietSection" class="mt-4">
+		<h4>Diet Details</h4>
+
+		<label>Daily Calories:</label>
+		<input type="number" class="form-control" asp-for="Daily_Calories" />
+
+		<label class="mt-2">Water Intake Goal (ml):</label>
+		<input type="number" class="form-control" asp-for="Water_Intake_Goal" />
+
+		<label class="mt-2">Allergies:</label>
+		<input type="text" class="form-control" asp-for="Allergies" />
+	</div>
+
+	<button class="btn btn-primary mt-4">Save Plan</button>
+</form>
