@@ -1,0 +1,39 @@
+﻿@page
+@model FCMS_Phase1.Pages.Classes.AttendanceModel
+@{
+    ViewData["Title"] = "Attendance";
+}
+
+<h1>Class Attendance</h1>
+
+<label>Select Class:</label>
+<select id="classSelect">
+    @foreach (var cls in Model.Classes)
+    {
+        <option value="@cls.Id">@cls.Name (@cls.Day - @cls.Time)</option>
+    }
+</select>
+
+<h3>Members</h3>
+<form>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Member Name</th>
+                <th>Present</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model.Members)
+            {
+                <tr>
+                    <td>@member.Name</td>
+                    <td>
+                        <input type="checkbox" name="present" value="@member.Id" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Submit Attendance</button>
+</form>

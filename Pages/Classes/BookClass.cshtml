@@ -1,0 +1,27 @@
+﻿@page
+@model FCMS_Phase1.Pages.Classes.BookClassModel
+@{
+    ViewData["Title"] = "Book Class";
+}
+
+<h1>Book a Class</h1>
+
+<form method="post">
+    <label>Select Class:</label>
+    <select asp-for="SelectedClassId" class="form-control">
+        <option value="">-- Select Class --</option>
+        @foreach (var cls in Model.Classes)
+        {
+            <option value="@cls.Id">@cls.Name (@cls.Day - @cls.Time)</option>
+        }
+    </select>
+    <br />
+    <button type="submit" class="btn btn-primary">Join Class</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success mt-2">
+        @Model.Message
+    </div>
+}

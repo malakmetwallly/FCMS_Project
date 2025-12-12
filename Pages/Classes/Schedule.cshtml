@@ -1,45 +1,69 @@
 ﻿@page
-@model FCMS_Project.Pages.Classes.ScheduleModel
-@{
-    ViewData["Title"] = "Class Schedule";
-}
+@model FCMS_Phase1.Pages.Classes.ScheduleModel
 
-<div class="text-center mb-5">
-    <h1 class="display-4">📅 Weekly Class Schedule</h1>
-    <p class="lead">Check upcoming classes and book your spot.</p>
-</div>
+<h1>Weekly Class Schedule</h1>
 
-<table class="table table-bordered text-center">
-    <thead class="bg-primary text-white">
+<table class="table table-bordered">
+    <thead>
         <tr>
             <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td class="fw-bold">10:00 AM</td>
-            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
-            <td></td>
-            <td class="table-danger">CrossFit<br><small>Capt. Mike</small></td>
-            <td></td>
-            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
-        </tr>
-        <tr>
-            <td class="fw-bold">06:00 PM</td>
-            <td></td>
-            <td class="table-warning">Boxing<br><small>Capt. Ali</small></td>
-            <td></td>
-            <td class="table-success">Zumba<br><small>Capt. Laila</small></td>
-            <td></td>
-        </tr>
+        @foreach (var timeGroup in Model.WeeklyClasses.GroupBy(c => c.Time))
+        {
+            <tr>
+                <td>@timeGroup.Key</td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Mon"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Tue"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Wed"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Thu"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Fri"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Sat"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var c in timeGroup.Where(c => c.Day == "Sun"))
+                    {
+                        <div>@c.Name (@c.Trainer)</div>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-
-<div class="text-center mt-4">
-    <button class="btn btn-lg btn-dark">View My Bookings</button>
-</div>
