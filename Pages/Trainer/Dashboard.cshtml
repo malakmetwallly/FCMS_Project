@@ -1,60 +1,35 @@
 ﻿@page
-@model FCMS_Project.Pages.Trainer.DashboardModel
+@model TrainerDashboardModel
 @{
-    ViewData["Title"] = "Trainer Portal";
+    ViewData["Title"] = "Trainer Dashboard";
 }
 
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>💪 Trainer Dashboard</h1>
-        <button class="btn btn-outline-danger">Logout</button>
-    </div>
+<h2>My Members</h2>
 
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <div class="card text-white bg-dark">
-                <div class="card-body text-center">
-                    <h3>12</h3>
-                    <p>Assigned Clients</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card text-white bg-secondary">
-                <div class="card-body text-center">
-                    <h3>3</h3>
-                    <p>Pending Plans</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Goal</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var m in Model.Members)
+		{
+		<tr>
+			<td>@m.Name</td>
+			<td>@m.Age</td>
+			<td>@m.Goal</td>
+			<td>
+				<a class="btn btn-primary btn-sm"
+				   asp-page="AssignPlan" asp-route-memberId="@m.Member_ID">Assign Plan</a>
 
-    <h3>My Clients</h3>
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>Client Name</th>
-                <th>Goal</th>
-                <th>Last Update</th>
-                <th>Workout Plan</th>
-                <th>Diet Plan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Khaled Amr</td>
-                <td>Muscle Gain</td>
-                <td>2 Days ago</td>
-                <td><button class="btn btn-sm btn-primary">Update Plan</button></td>
-                <td><button class="btn btn-sm btn-success">Update Diet</button></td>
-            </tr>
-            <tr>
-                <td>Sarah Hany</td>
-                <td>Weight Loss</td>
-                <td>Today</td>
-                <td><button class="btn btn-sm btn-primary">Update Plan</button></td>
-                <td><button class="btn btn-sm btn-success">Update Diet</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+				<a class="btn btn-success btn-sm"
+				   asp-page="Progress" asp-route-memberId="@m.Member_ID">View Progress</a>
+			</td>
+		</tr>
+		}
+	</tbody>
+</table>
