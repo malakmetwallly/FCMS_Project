@@ -1,0 +1,76 @@
+﻿@page
+@model FCMS_Project.Pages.Admin.DashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Admin Dashboard</h1>
+    <p class="lead">Manage your Gym Staff and view System Reports.</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Total Trainers</div>
+            <div class="card-body">
+                <h5 class="card-title">15</h5> <p class="card-text">Active trainers on duty.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Total Members</div>
+            <div class="card-body">
+                <h5 class="card-title">42</h5> <p class="card-text">Registered active members.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">Monthly Revenue</div>
+            <div class="card-body">
+                <h5 class="card-title">50,000 EGP</h5> <p class="card-text">Estimated for this month.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Manage Staff</h3>
+<div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-dark">+ Add New Staff</button>
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Shift</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Captain Ahmed</td>
+            <td>Trainer</td>
+            <td>Morning</td>
+            <td>
+                <button class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sarah Ali</td>
+            <td>Receptionist</td>
+            <td>Evening</td>
+            <td>
+                <button class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

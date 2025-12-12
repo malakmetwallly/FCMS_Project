@@ -1,0 +1,45 @@
+﻿@page
+@model FCMS_Project.Pages.Classes.ScheduleModel
+@{
+    ViewData["Title"] = "Class Schedule";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">📅 Weekly Class Schedule</h1>
+    <p class="lead">Check upcoming classes and book your spot.</p>
+</div>
+
+<table class="table table-bordered text-center">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="fw-bold">10:00 AM</td>
+            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
+            <td></td>
+            <td class="table-danger">CrossFit<br><small>Capt. Mike</small></td>
+            <td></td>
+            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
+        </tr>
+        <tr>
+            <td class="fw-bold">06:00 PM</td>
+            <td></td>
+            <td class="table-warning">Boxing<br><small>Capt. Ali</small></td>
+            <td></td>
+            <td class="table-success">Zumba<br><small>Capt. Laila</small></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center mt-4">
+    <button class="btn btn-lg btn-dark">View My Bookings</button>
+</div>

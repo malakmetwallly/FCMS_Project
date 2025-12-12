@@ -1,0 +1,60 @@
+﻿@page
+@model FCMS_Project.Pages.Trainer.DashboardModel
+@{
+    ViewData["Title"] = "Trainer Portal";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>💪 Trainer Dashboard</h1>
+        <button class="btn btn-outline-danger">Logout</button>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card text-white bg-dark">
+                <div class="card-body text-center">
+                    <h3>12</h3>
+                    <p>Assigned Clients</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-white bg-secondary">
+                <div class="card-body text-center">
+                    <h3>3</h3>
+                    <p>Pending Plans</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>My Clients</h3>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Goal</th>
+                <th>Last Update</th>
+                <th>Workout Plan</th>
+                <th>Diet Plan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Khaled Amr</td>
+                <td>Muscle Gain</td>
+                <td>2 Days ago</td>
+                <td><button class="btn btn-sm btn-primary">Update Plan</button></td>
+                <td><button class="btn btn-sm btn-success">Update Diet</button></td>
+            </tr>
+            <tr>
+                <td>Sarah Hany</td>
+                <td>Weight Loss</td>
+                <td>Today</td>
+                <td><button class="btn btn-sm btn-primary">Update Plan</button></td>
+                <td><button class="btn btn-sm btn-success">Update Diet</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
