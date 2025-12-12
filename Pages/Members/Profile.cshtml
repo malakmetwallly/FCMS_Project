@@ -1,0 +1,31 @@
+@page "{id:int}"
+@model MemberWebApp.Pages.Members.ProfileModel
+
+<h1>@Model.Member.Name's Profile</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">Member ID</dt>
+    <dd class="col-sm-10">@Model.Member.Member_ID</dd>
+    <dt class="col-sm-2">Email</dt>
+    <dd class="col-sm-10">@Model.Member.Email</dd>
+    <dt class="col-sm-2">Phone</dt>
+    <dd class="col-sm-10">@Model.Member.Phone</dd>
+    <dt class="col-sm-2">Weight</dt>
+    <dd class="col-sm-10">@Model.Member.Weight kg</dd>
+    <dt class="col-sm-2">Height</dt>
+    <dd class="col-sm-10">@Model.Member.Height cm</dd>
+    <dt class="col-sm-2">Age</dt>
+    <dd class="col-sm-10">@Model.Member.Age</dd>
+    <dt class="col-sm-2">Gender</dt>
+    <dd class="col-sm-10">@Model.Member.Gender</dd>
+    <dt class="col-sm-2">Join Date</dt>
+    <dd class="col-sm-10">@Model.Member.Join_Date.ToShortDateString()</dd>
+    <dt class="col-sm-2">Membership Type</dt>
+    <dd class="col-sm-10">@Model.Member.Membership_Type</dd>
+    <dt class="col-sm-2">Goal</dt>
+    <dd class="col-sm-10">@Model.Member.Goal</dd>
+    <dt class="col-sm-2">Last Updated</dt>
+    <dd class="col-sm-10">@Model.Member.Last_Updated.ToShortDateString()</dd>
+    <dt class="col-sm-2">Assigned Trainer</dt>
+    <dd class="col-sm-10">@(Model.Trainer?.Name ?? "Not Assigned")</dd>
+</dl>

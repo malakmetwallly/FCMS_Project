@@ -1,58 +1,38 @@
-﻿@page
-@model FCMS_Project.Pages.Members.IndexModel
-@{
-    ViewData["Title"] = "Reception - Member Management";
-}
+@page
+@model MemberWebApp.Pages.Members.IndexModel
 
-<div class="container">
-    <h2 class="mb-4">🏋️ Member Management (Reception)</h2>
+<h1>All Members</h1>
 
-    <div class="card p-3 mb-4 bg-light">
-        <div class="row">
-            <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="Search by Member Name or Phone..." />
-            </div>
-            <div class="col-md-4">
-                <button class="btn btn-primary w-100">🔍 Search Member</button>
-            </div>
-        </div>
+<form method="get">
+    <div class="form-group">
+        <label>Search by Name:</label>
+        <input asp-for="Search" class="form-control" />
+        <button type="submit" class="btn btn-primary">Search</button>
     </div>
+</form>
 
-    <div class="d-flex justify-content-end mb-3">
-        <a href="#" class="btn btn-success">+ Register New Member</a>
-    </div>
-
-    <table class="table table-hover table-bordered">
-        <thead class="table-dark">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Goal</th>
+            <th>Membership Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model.Members)
+        {
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Membership Type</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>101</td>
-                <td>Nour Hossam</td>
-                <td>Premium (1 Year)</td>
-                <td><span class="badge bg-success">Active</span></td>
+                <td>@member.Name</td>
+                <td>@member.Age</td>
+                <td>@member.Goal</td>
+                <td>@member.Membership_Type</td>
                 <td>
-                    <button class="btn btn-sm btn-info">View Profile</button>
-                    <button class="btn btn-sm btn-warning">Edit</button>
+                    <a asp-page="Profile" asp-route-id="@member.Member_ID">View Profile</a>
                 </td>
             </tr>
-            <tr>
-                <td>102</td>
-                <td>Ahmed Ali</td>
-                <td>Standard (1 Month)</td>
-                <td><span class="badge bg-danger">Expired</span></td>
-                <td>
-                    <button class="btn btn-sm btn-info">View Profile</button>
-                    <button class="btn btn-sm btn-warning">Edit</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+        }
+    </tbody>
+</table>
