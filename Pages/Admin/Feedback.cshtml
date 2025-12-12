@@ -1,0 +1,32 @@
+﻿@page
+@model FCMS_Project.Pages.Admin.FeedbackModel
+@{
+    ViewData["Title"] = "System Feedback";
+}
+
+<div class="container mt-4">
+    <h2>User Feedback</h2>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Member Name</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>The AC in the cardio room is broken.</td>
+                <td>2025-12-10</td>
+            </tr>
+            <tr>
+                <td>Sarah Ali</td>
+                <td>Great yoga class today!</td>
+                <td>2025-12-11</td>
+            </tr>
+        </tbody>
+    </table>
+    <a asp-page="/Admin/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

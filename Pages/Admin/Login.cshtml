@@ -1,0 +1,21 @@
+﻿@page
+@model FCMS_Project.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h3 class="text-center">Login</h3>
+            <form method="post">
+                <label>Email</label>
+                <input type="email" class="form-control mb-2" required />
+                <label>Password</label>
+                <input type="password" class="form-control mb-3" required />
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+            </form>
+            <a asp-page="/Members/Register" class="d-block text-center mt-2">Register</a>
+        </div>
+    </div>
+</div>
