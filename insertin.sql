@@ -24,8 +24,7 @@ VALUES
 
 
 
----------------------------------------------------------------
--- 2) Insert 40 Attendance Records
+
 
 INSERT INTO Attendance (Member_ID, Receptionist_ID, Status, Date, Time_In, Time_Out)
 VALUES
@@ -116,6 +115,7 @@ FROM Member m
 JOIN Class_Enrollment ce ON m.Member_ID = ce.Member_ID
 JOIN Class c ON ce.Class_ID = c.Class_ID
 WHERE c.Class_ID = 1;
+
 
 
 
