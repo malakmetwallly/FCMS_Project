@@ -1,0 +1,29 @@
+﻿@page
+@model FCMS_Project.Pages.Admin.AssignTrainerModel
+@{
+    ViewData["Title"] = "Assign Trainer";
+}
+
+<div class="container">
+    <h2>Assign Trainer</h2>
+    <hr />
+    <form method="post" class="col-md-6">
+        <label>Member</label>
+        <select class="form-control mb-2">
+            <option>John Doe</option>
+            <option>Nour Hossam</option>
+        </select>
+
+        <label>Trainer</label>
+        <select class="form-control mb-2">
+            <option>Captain Ahmed</option>
+            <option>Captain Sarah</option>
+        </select>
+
+        <label>Goal</label>
+        <input type="text" class="form-control mb-3" placeholder="Weight Loss" />
+
+        <button type="submit" class="btn btn-primary">Assign</button>
+        <a asp-page="/Admin/Dashboard" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
