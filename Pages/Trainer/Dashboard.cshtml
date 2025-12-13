@@ -1,35 +1,41 @@
 ﻿@page
-@model TrainerDashboardModel
+@model DashboardModel
 @{
     ViewData["Title"] = "Trainer Dashboard";
 }
 
-<h2>My Members</h2>
+<h2 class="mb-4">Trainer Dashboard</h2>
 
-<table class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Age</th>
-			<th>Goal</th>
-			<th>Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var m in Model.Members)
-		{
-		<tr>
-			<td>@m.Name</td>
-			<td>@m.Age</td>
-			<td>@m.Goal</td>
-			<td>
-				<a class="btn btn-primary btn-sm"
-				   asp-page="AssignPlan" asp-route-memberId="@m.Member_ID">Assign Plan</a>
+<div class="card shadow p-3 mb-4">
+	<h4>My Clients</h4>
 
-				<a class="btn btn-success btn-sm"
-				   asp-page="Progress" asp-route-memberId="@m.Member_ID">View Progress</a>
-			</td>
-		</tr>
-		}
-	</tbody>
-</table>
+	<table class="table table-striped mt-3">
+		<thead class="table-dark">
+			<tr>
+				<th>Member Name</th>
+				<th>Email</th>
+				<th>Workout Plan</th>
+				<th>Diet Plan</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var member in Model.MyMembers)
+			{
+			<tr>
+				<td>@member.Name</td>
+				<td>@member.Email</td>
+				<td>@member.WorkoutPlan</td>
+				<td>@member.DietPlan</td>
+				<td>
+					<a class="btn btn-sm btn-primary">Update Plan</a>
+					<a class="btn btn-sm btn-warning">Update Diet</a>
+					<a asp-page="LogProgress" class="btn btn-sm btn-success">
+						Log Progress
+					</a>
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+</div>
