@@ -1,0 +1,93 @@
+﻿@page
+@model FCMS_Project.Pages.Members.IndexModel
+
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <h2 class="text-primary fw-bold text-center">
+                Reception – Dashboard
+            </h2>
+            <p class="text-muted text-center">
+                Search, check-in, and manage members
+            </p>
+
+            <hr />
+
+            <!-- Search -->
+            <form method="get" class="d-flex mb-3">
+                <input name="search"
+                       class="form-control me-2"
+                       placeholder="Search member name..." />
+                <button class="btn btn-outline-primary">Search</button>
+            </form>
+
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Trainer</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var m in Model.Members)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@m.Name</td>
+                            <td>@m.Trainer</td>
+
+                            <td>
+                                @if (m.HasPaid)
+                                {
+                                    <span class="badge bg-success">Paid</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Not Paid</span>
+                                }
+                            </td>
+
+                            <td>
+                                @if (m.IsCheckedIn)
+                                {
+                                    <span class="badge bg-primary">Checked In</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Checked Out</span>
+                                }
+                            </td>
+
+                            <td class="text-center">
+                                <a asp-page="/Members/Profile"
+                                   asp-route-id="@m.Id"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    View
+                                </a>
+
+                                <form method="post"
+                                      asp-page-handler="ToggleCheck"
+                                      asp-route-id="@m.Id"
+                                      class="d-inline">
+                                    <button class="btn btn-sm btn-outline-success">
+                                        @(m.IsCheckedIn ? "Check Out" : "Check In")
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a asp-page="/Members/Register"
+               class="btn btn-primary mt-3">
+                + Register New Member
+            </a>
+
+        </div>
+    </div>
+</div>

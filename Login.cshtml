@@ -1,0 +1,38 @@
+﻿@page
+@model FCMS_Project.Pages.Account.LoginModel
+
+<div class="container mt-5" style="max-width:400px;">
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <h3 class="text-center text-primary fw-bold">
+                Receptionist Sign In
+            </h3>
+
+            <hr />
+
+            @if (!string.IsNullOrEmpty(Model.Message))
+            {
+                <div class="alert alert-danger">
+                    @Model.Message
+                </div>
+            }
+
+            <form method="post">
+                <label>Username</label>
+                <input asp-for="Username"
+                       class="form-control mb-3" />
+
+                <label>Password</label>
+                <input asp-for="Password"
+                       type="password"
+                       class="form-control mb-3" />
+
+                <button class="btn btn-primary w-100">
+                    Sign In
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>

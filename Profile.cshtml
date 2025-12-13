@@ -1,0 +1,42 @@
+﻿@page "{id:int}"
+@model FCMS_Project.Pages.Members.ProfileModel
+
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <h3 class="text-primary fw-bold">
+                Member Profile
+            </h3>
+            <hr />
+
+            <p><b>Name:</b> @Model.Name</p>
+            <p><b>Age:</b> @Model.Age</p>
+            <p><b>Height:</b> @Model.Height cm</p>
+            <p><b>Weight:</b> @Model.Weight kg</p>
+            <p><b>Goal:</b> @Model.Goal</p>
+            <p><b>Trainer:</b> @Model.Trainer</p>
+
+            <p>
+                <b>Payment:</b>
+                <span class="badge @(Model.HasPaid ? "bg-success" : "bg-danger")">
+                    @(Model.HasPaid ? "Paid" : "Not Paid")
+                </span>
+            </p>
+
+            <p>
+                <b>Status:</b>
+                <span class="badge bg-info">
+                    @(Model.IsCheckedIn ? "Checked In" : "Checked Out")
+                </span>
+            </p>
+
+            <a asp-page="/Members/Index"
+               class="btn btn-secondary mt-3">
+                Back
+            </a>
+
+        </div>
+    </div>
+</div>
+
