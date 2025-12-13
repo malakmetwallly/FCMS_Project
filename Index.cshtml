@@ -1,93 +1,138 @@
-﻿@page
-@model FCMS_Project.Pages.Members.IndexModel
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+using System.Linq;
 
-<div class="container mt-5">
-    <div class="card shadow border-0">
-        <div class="card-body">
+namespace FCMS_Project.Pages.Members
+{
+    public class IndexModel : PageModel
+    {
+        public static List<MemberVM> MembersData = new()
+        {
+            new MemberVM
+            {
+                Id = 101,
+                Name = "John Doe",
+                Trainer = "Captain Ahmed",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 102,
+                Name = "Sara Ali",
+                Trainer = "Coach Lina",
+                HasPaid = false,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 103,
+                Name = "Ahmed Hassan",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 104,
+                Name = "Mona Adel",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 105,
+                Name = "Khaled Samir",
+                Trainer = "Captain Ahmed",
+                HasPaid = false,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 106,
+                Name = "Nour ElDin",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 107,
+                Name = "Huda Mahmoud",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 108,
+                Name = "Omar Youssef",
+                Trainer = "Captain Ahmed",
+                HasPaid = false,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 109,
+                Name = "Salma Fathy",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 110,
+                Name = "Youssef Adel",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 111,
+                Name = "Mai Hassan",
+                Trainer = "Coach Lina",
+                HasPaid = false,
+                IsCheckedIn = true
+            }
+        };
 
-            <h2 class="text-primary fw-bold text-center">
-                Reception – Dashboard
-            </h2>
-            <p class="text-muted text-center">
-                Search, check-in, and manage members
-            </p>
+        public List<MemberVM> Members { get; set; } = new();
 
-            <hr />
+        public void OnGet(int? memberId)
+        {
+            if (memberId.HasValue && memberId > 0)
+            {
+                Members = MembersData
+                    .Where(m => m.Id == memberId.Value)
+                    .ToList();
+            }
+            else
+            {
+                Members = MembersData;
+            }
+        }
 
-            <!-- Search -->
-            <form method="get" class="d-flex mb-3">
-                <input name="search"
-                       class="form-control me-2"
-                       placeholder="Search member name..." />
-                <button class="btn btn-outline-primary">Search</button>
-            </form>
+        public IActionResult OnPostToggleCheck(int id)
+        {
+            var member = MembersData.FirstOrDefault(m => m.Id == id);
+            if (member != null)
+            {
+                member.IsCheckedIn = !member.IsCheckedIn;
+            }
 
-            <table class="table table-hover align-middle">
-                <thead class="table-light">
-                    <tr>
-                        <th>Name</th>
-                        <th>Trainer</th>
-                        <th>Payment</th>
-                        <th>Status</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
+            return RedirectToPage();
+        }
+    }
 
-                <tbody>
-                    @foreach (var m in Model.Members)
-                    {
-                        <tr>
-                            <td class="fw-semibold">@m.Name</td>
-                            <td>@m.Trainer</td>
-
-                            <td>
-                                @if (m.HasPaid)
-                                {
-                                    <span class="badge bg-success">Paid</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-danger">Not Paid</span>
-                                }
-                            </td>
-
-                            <td>
-                                @if (m.IsCheckedIn)
-                                {
-                                    <span class="badge bg-primary">Checked In</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">Checked Out</span>
-                                }
-                            </td>
-
-                            <td class="text-center">
-                                <a asp-page="/Members/Profile"
-                                   asp-route-id="@m.Id"
-                                   class="btn btn-sm btn-outline-secondary">
-                                    View
-                                </a>
-
-                                <form method="post"
-                                      asp-page-handler="ToggleCheck"
-                                      asp-route-id="@m.Id"
-                                      class="d-inline">
-                                    <button class="btn btn-sm btn-outline-success">
-                                        @(m.IsCheckedIn ? "Check Out" : "Check In")
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-
-            <a asp-page="/Members/Register"
-               class="btn btn-primary mt-3">
-                + Register New Member
-            </a>
-
-        </div>
-    </div>
-</div>
+    public class MemberVM
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Trainer { get; set; } = string.Empty;
+        public bool HasPaid { get; set; }
+        public bool IsCheckedIn { get; set; }
+    }
+}
