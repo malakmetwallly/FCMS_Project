@@ -24,6 +24,78 @@ namespace FCMS_Project.Pages.Members
                 Trainer = "Coach Lina",
                 HasPaid = false,
                 IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 103,
+                Name = "Ahmed Hassan",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 104,
+                Name = "Mona Adel",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 105,
+                Name = "Khaled Samir",
+                Trainer = "Captain Ahmed",
+                HasPaid = false,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 106,
+                Name = "Nour ElDin",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 107,
+                Name = "Huda Mahmoud",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 108,
+                Name = "Omar Youssef",
+                Trainer = "Captain Ahmed",
+                HasPaid = false,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 109,
+                Name = "Salma Fathy",
+                Trainer = "Coach Lina",
+                HasPaid = true,
+                IsCheckedIn = true
+            },
+            new MemberVM
+            {
+                Id = 110,
+                Name = "Youssef Adel",
+                Trainer = "Captain Omar",
+                HasPaid = true,
+                IsCheckedIn = false
+            },
+            new MemberVM
+            {
+                Id = 111,
+                Name = "Mai Hassan",
+                Trainer = "Coach Lina",
+                HasPaid = false,
+                IsCheckedIn = true
             }
         };
 
@@ -31,13 +103,15 @@ namespace FCMS_Project.Pages.Members
 
         public void OnGet(int? memberId)
         {
-            Members = MembersData;
-
-            if (memberId.HasValue)
+            if (memberId.HasValue && memberId > 0)
             {
-                Members = Members
+                Members = MembersData
                     .Where(m => m.Id == memberId.Value)
                     .ToList();
+            }
+            else
+            {
+                Members = MembersData;
             }
         }
 
@@ -62,3 +136,4 @@ namespace FCMS_Project.Pages.Members
         public bool IsCheckedIn { get; set; }
     }
 }
+
