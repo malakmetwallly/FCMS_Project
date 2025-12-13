@@ -1,45 +1,43 @@
-﻿@page "{memberId:int}"
+﻿@page
 @model AssignPlanModel
+@{
+    ViewData["Title"] = "Assign Workout Plan";
+}
 
-<h2>Assign Plan</h2>
+<h2>🏋️ Assign Workout Plan</h2>
 
-<form method="post">
-	<input type="hidden" asp-for="MemberID" />
+<div class="card shadow p-4 mt-3">
+	<form method="post">
 
-	<div class="mb-3">
-		<label class="form-label">Plan Type</label>
-		<select asp-for="PlanType" class="form-control">
-			<option value="Workout">Workout Plan</option>
-			<option value="Diet">Diet Plan</option>
-		</select>
-	</div>
+		<div class="mb-3">
+			<label class="form-label">Member Name</label>
+			<input type="text" class="form-control" value="Ahmed Ali" disabled />
+		</div>
 
-	
+		<div class="mb-3">
+			<label class="form-label">Workout Plan Type</label>
+			<select class="form-select">
+				<option selected disabled>-- Select Plan --</option>
+				<option>Beginner</option>
+				<option>Strength</option>
+				<option>Weight Loss</option>
+				<option>Muscle Gain</option>
+			</select>
+		</div>
 
-	<div id="WorkoutSection">
-		<h4>Workout Details</h4>
+		<div class="mb-3">
+			<label class="form-label">Workout Details</label>
+			<textarea class="form-control" rows="4"
+					  placeholder="e.g. Day 1: Chest, Day 2: Back..."></textarea>
+		</div>
 
-		<label>Weekly Schedule:</label>
-		<textarea class="form-control" asp-for="Weekly_Schedule" rows="4"></textarea>
+		<div class="mb-3">
+			<label class="form-label">Duration (Weeks)</label>
+			<input type="number" class="form-control" min="1" />
+		</div>
 
-		<label class="mt-2">Focus Area:</label>
-		<input type="text" class="form-control" asp-for="Focus_Area" />
-	</div>
+		<button class="btn btn-primary">Assign Plan</button>
+		<a asp-page="Dashboard" class="btn btn-secondary">Cancel</a>
 
-
-
-	<div id="DietSection" class="mt-4">
-		<h4>Diet Details</h4>
-
-		<label>Daily Calories:</label>
-		<input type="number" class="form-control" asp-for="Daily_Calories" />
-
-		<label class="mt-2">Water Intake Goal (ml):</label>
-		<input type="number" class="form-control" asp-for="Water_Intake_Goal" />
-
-		<label class="mt-2">Allergies:</label>
-		<input type="text" class="form-control" asp-for="Allergies" />
-	</div>
-
-	<button class="btn btn-primary mt-4">Save Plan</button>
-</form>
+	</form>
+</div>
