@@ -1,50 +1,27 @@
-﻿@page "{memberId:int}"
+﻿@page
 @model ProgressModel
+@{
+    ViewData["Title"] = "Log Progress";
+}
 
-<h2>Progress Tracking</h2>
+<h2> Log Member Progress</h2>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Date</th>
-			<th>Weight</th>
-			<th>Muscle Mass</th>
-			<th>Body Fat %</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var p in Model.ProgressList)
-		{
-		<tr>
-			<td>@p.Date_Recorded.ToShortDateString()</td>
-			<td>@p.Weight</td>
-			<td>@p.Muscle_Mass</td>
-			<td>@p.Body_Fat_Percentage</td>
-			<td>@p.Notes</td>
-		</tr>
-		}
-	</tbody>
-</table>
+<form method="post" class="card p-4 shadow mt-3">
+	<div class="mb-3">
+		<label class="form-label">Weight (kg)</label>
+		<input type="number" class="form-control" />
+	</div>
 
-<hr />
+	<div class="mb-3">
+		<label class="form-label">Body Fat %</label>
+		<input type="number" class="form-control" />
+	</div>
 
-<h4>Add New Progress</h4>
+	<div class="mb-3">
+		<label class="form-label">Notes</label>
+		<textarea class="form-control"></textarea>
+	</div>
 
-<form method="post">
-	<input type="hidden" asp-for="MemberID" />
-
-	<label>Weight (kg)</label>
-	<input type="number" step="0.1" asp-for="Weight" class="form-control" />
-
-	<label class="mt-2">Muscle Mass (kg)</label>
-	<input type="number" step="0.1" asp-for="Muscle_Mass" class="form-control" />
-
-	<label class="mt-2">Body Fat %</label>
-	<input type="number" step="0.1" asp-for="Body_Fat_Percentage" class="form-control" />
-
-	<label class="mt-2">Notes</label>
-	<textarea rows="3" asp-for="Notes" class="form-control"></textarea>
-
-	<button class="btn btn-success mt-3">Add</button>
+	<button class="btn btn-success">Save Progress</button>
+	<a asp-page="Dashboard" class="btn btn-secondary">Back</a>
 </form>
