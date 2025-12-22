@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model DashboardModel
 @{
     ViewData["Title"] = "Trainer Dashboard";
@@ -7,35 +7,37 @@
 <h2 class="mb-4">Trainer Dashboard</h2>
 
 <div class="card shadow p-3 mb-4">
-	<h4>My Clients</h4>
+    <h4>My Clients</h4>
 
-	<table class="table table-striped mt-3">
-		<thead class="table-dark">
-			<tr>
-				<th>Member Name</th>
-				<th>Email</th>
-				<th>Workout Plan</th>
-				<th>Diet Plan</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var member in Model.MyMembers)
-			{
-			<tr>
-				<td>@member.Name</td>
-				<td>@member.Email</td>
-				<td>@member.WorkoutPlan</td>
-				<td>@member.DietPlan</td>
-				<td>
-					<a class="btn btn-sm btn-primary">Update Plan</a>
-					<a class="btn btn-sm btn-warning">Update Diet</a>
-					<a asp-page="LogProgress" class="btn btn-sm btn-success">
-						Log Progress
-					</a>
-				</td>
-			</tr>
-			}
-		</tbody>
-	</table>
+    <table class="table table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Member Name</th>
+                <th>Email</th>
+                <th>Workout Plan</th>
+                <th>Diet Plan</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model.MyMembers)
+            {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.Email</td>
+                <td>@(string.IsNullOrEmpty(member.WorkoutPlan) ? "No Plan" : member.WorkoutPlan)</td>
+                <td>@(string.IsNullOrEmpty(member.DietPlan) ? "No Plan" : member.DietPlan)</td>
+                <td>
+                    <a asp-page="/AssignPlan" asp-route-id="@member.MemberId" class="btn btn-sm btn-primary">Update Plan</a>
+                    
+                    <a asp-page="/AssignDietPlan" asp-route-id="@member.MemberId" class="btn btn-sm btn-warning">Update Diet</a>
+                    
+                    <a asp-page="/LogProgress" asp-route-id="@member.MemberId" class="btn btn-sm btn-success">
+                        Log Progress
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
 </div>
