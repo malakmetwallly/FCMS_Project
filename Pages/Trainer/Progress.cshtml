@@ -1,27 +1,46 @@
-﻿@page
+﻿@page "{id:int}"
 @model ProgressModel
 @{
     ViewData["Title"] = "Log Progress";
 }
 
-<h2> Log Member Progress</h2>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h3 class="mb-0">Log Progress for @Model.MemberName</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                @* Hidden field for Trainer ID *@
+                <input type="hidden" asp-for="TrainerId" value="1" />
 
-<form method="post" class="card p-4 shadow mt-3">
-	<div class="mb-3">
-		<label class="form-label">Weight (kg)</label>
-		<input type="number" class="form-control" />
-	</div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number" step="0.1" class="form-control" asp-for="Weight" required />
+                    </div>
 
-	<div class="mb-3">
-		<label class="form-label">Body Fat %</label>
-		<input type="number" class="form-control" />
-	</div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Muscle Mass (kg)</label>
+                        <input type="number" step="0.1" class="form-control" asp-for="MuscleMass" required />
+                    </div>
 
-	<div class="mb-3">
-		<label class="form-label">Notes</label>
-		<textarea class="form-control"></textarea>
-	</div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Body Fat %</label>
+                        <input type="number" step="0.1" class="form-control" asp-for="BodyFat" required />
+                    </div>
+                </div>
 
-	<button class="btn btn-success">Save Progress</button>
-	<a asp-page="Dashboard" class="btn btn-secondary">Back</a>
-</form>
+                <div class="mb-3">
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-control" rows="3" asp-for="Notes" placeholder="How was their performance this week?"></textarea>
+                </div>
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-success">Save Progress</button>
+                    <a asp-page="/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
