@@ -1,0 +1,44 @@
+﻿@page
+@model FCMS_Project_New.Pages.Classes.BookClassModel
+@{
+    ViewData["Title"] = "Book Class";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">📅 Book a New Class</h3>
+        </div>
+        <div class="card-body">
+
+            @if (!string.IsNullOrEmpty(Model.Message))
+            {
+                <div class="alert alert-@Model.MessageType alert-dismissible fade show" role="alert">
+                    @Model.Message
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Select a Class:</label>
+                    <select asp-for="SelectedClassId" class="form-select" required>
+                        <option value="">-- Choose Available Class --</option>
+                        @foreach (var cls in Model.Classes)
+                        {
+                            <option value="@cls.Id">
+                                @cls.Name | 📅 @cls.ClassDate | ⏰ @cls.StartTime
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        Confirm Booking
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\attendance.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\attendance.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\schedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\schedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\bookclass.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\bookclass.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\bookclass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\bookclass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\pages\\classes\\schedule.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:pages\\classes\\schedule.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|c:\\users\\victus\\source\\repos\\fcms_project_new\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{42B984B0-A0F1-48D6-8FCB-0F5C2D0B8E62}|FCMS_Project.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-22T20:49:43.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Schedule.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Schedule.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Classes\\Schedule.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Schedule.cshtml",
+              "RelativeToolTip": "Pages\\Classes\\Schedule.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:09:22.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Schedule.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Schedule.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Classes\\Schedule.cshtml.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Schedule.cshtml.cs",
+              "RelativeToolTip": "Pages\\Classes\\Schedule.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T18:05:32.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookClass.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\BookClass.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Classes\\BookClass.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\BookClass.cshtml",
+              "RelativeToolTip": "Pages\\Classes\\BookClass.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:01:56.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookClass.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\BookClass.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Classes\\BookClass.cshtml.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\BookClass.cshtml.cs",
+              "RelativeToolTip": "Pages\\Classes\\BookClass.cshtml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswCsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T17:59:51.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Attendance.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Attendance.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Classes\\Attendance.cshtml.cs",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Attendance.cshtml.cs",
+              "RelativeToolTip": "Pages\\Classes\\Attendance.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T17:29:14.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-22T17:23:41.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Attendance.cshtml",
+              "DocumentMoniker": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Attendance.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Classes\\Attendance.cshtml",
+              "ToolTip": "C:\\Users\\Victus\\source\\repos\\FCMS_Project_New\\Pages\\Classes\\Attendance.cshtml",
+              "RelativeToolTip": "Pages\\Classes\\Attendance.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T17:20:46.049Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

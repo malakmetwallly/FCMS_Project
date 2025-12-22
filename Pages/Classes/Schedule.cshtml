@@ -1,45 +1,69 @@
 ﻿@page
-@model FCMS_Project.Pages.Classes.ScheduleModel
+@model FCMS_Project_New.Pages.Classes.ScheduleModel
 @{
-    ViewData["Title"] = "Class Schedule";
+    ViewData["Title"] = "Weekly Schedule";
 }
 
-<div class="text-center mb-5">
-    <h1 class="display-4">📅 Weekly Class Schedule</h1>
-    <p class="lead">Check upcoming classes and book your spot.</p>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📅 Weekly Class Schedule</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center align-middle shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th style="width: 10%;">Time</th>
+                    <th style="width: 12%;">Mon</th>
+                    <th style="width: 12%;">Tue</th>
+                    <th style="width: 12%;">Wed</th>
+                    <th style="width: 12%;">Thu</th>
+                    <th style="width: 12%;">Fri</th>
+                    <th style="width: 12%;">Sat</th>
+                    <th style="width: 12%;">Sun</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.WeeklyClasses.Count == 0)
+                {
+                    <tr>
+                        <td colspan="8" class="text-muted">No classes scheduled yet.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var timeGroup in Model.WeeklyClasses.OrderBy(x => x.Time).GroupBy(c => c.Time))
+                    {
+                        <tr>
+                            <td class="fw-bold bg-light">@timeGroup.Key</td>
+
+                            <td>@RenderClass(timeGroup, "Mon")</td>
+                            <td>@RenderClass(timeGroup, "Tue")</td>
+                            <td>@RenderClass(timeGroup, "Wed")</td>
+                            <td>@RenderClass(timeGroup, "Thu")</td>
+                            <td>@RenderClass(timeGroup, "Fri")</td>
+                            <td>@RenderClass(timeGroup, "Sat")</td>
+                            <td>@RenderClass(timeGroup, "Sun")</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<table class="table table-bordered text-center">
-    <thead class="bg-primary text-white">
-        <tr>
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="fw-bold">10:00 AM</td>
-            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
-            <td></td>
-            <td class="table-danger">CrossFit<br><small>Capt. Mike</small></td>
-            <td></td>
-            <td class="table-info">Yoga<br><small>Capt. Sarah</small></td>
-        </tr>
-        <tr>
-            <td class="fw-bold">06:00 PM</td>
-            <td></td>
-            <td class="table-warning">Boxing<br><small>Capt. Ali</small></td>
-            <td></td>
-            <td class="table-success">Zumba<br><small>Capt. Laila</small></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="text-center mt-4">
-    <button class="btn btn-lg btn-dark">View My Bookings</button>
-</div>
+@{
+    Microsoft.AspNetCore.Html.IHtmlContent RenderClass(IEnumerable<FCMS_Project_New.Pages.Classes.ScheduleModel.ClassItem> classes, string day)
+    {
+        var dayClasses = classes.Where(c => c.Day == day).ToList();
+        if (dayClasses.Any())
+        {
+            foreach (var c in dayClasses)
+            {
+                <div class="p-1 mb-1 bg-primary text-white rounded small">
+                    <strong>@c.Name</strong><br />
+                    <span style="font-size: 0.8em;">(@c.Trainer)</span>
+                </div>
+            }
+        }
+        return Html.Raw("");
+    }
+}
