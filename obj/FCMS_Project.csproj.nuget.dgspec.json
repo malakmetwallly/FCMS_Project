@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victus\\source\\repos\\WebApplication2\\FCMS_Project\\FCMS_Project.csproj": {}
+    "C:\\Users\\Victus\\Source\\Repos\\FCMS_Project_New\\FCMS_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victus\\source\\repos\\WebApplication2\\FCMS_Project\\FCMS_Project.csproj": {
+    "C:\\Users\\Victus\\Source\\Repos\\FCMS_Project_New\\FCMS_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victus\\source\\repos\\WebApplication2\\FCMS_Project\\FCMS_Project.csproj",
+        "projectUniqueName": "C:\\Users\\Victus\\Source\\Repos\\FCMS_Project_New\\FCMS_Project.csproj",
         "projectName": "FCMS_Project",
-        "projectPath": "C:\\Users\\Victus\\source\\repos\\WebApplication2\\FCMS_Project\\FCMS_Project.csproj",
+        "projectPath": "C:\\Users\\Victus\\Source\\Repos\\FCMS_Project_New\\FCMS_Project.csproj",
         "packagesPath": "C:\\Users\\Victus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victus\\source\\repos\\WebApplication2\\FCMS_Project\\obj\\",
+        "outputPath": "C:\\Users\\Victus\\Source\\Repos\\FCMS_Project_New\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

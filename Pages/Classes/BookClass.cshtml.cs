@@ -1,47 +1,110 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System;
 
-namespace FCMS_Phase1.Pages.Classes
+namespace FCMS_Project_New.Pages.Classes 
 {
     public class BookClassModel : PageModel
     {
-        public List<ClassItem> Classes { get; set; }
+        private readonly string _connectionString;
+
+        public BookClassModel(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
+        public List<ClassItem> Classes { get; set; } = new List<ClassItem>();
 
         [BindProperty]
         public int SelectedClassId { get; set; }
 
         public string Message { get; set; }
+        public string MessageType { get; set; } 
 
         public void OnGet()
         {
-            Classes = new List<ClassItem>
-            {
-                new ClassItem { Id = 1, Name="Yoga", Trainer="Sara", Day="Mon", Time="9 AM" },
-                new ClassItem { Id = 2, Name="HIIT", Trainer="Ali", Day="Tue", Time="10 AM" },
-                new ClassItem { Id = 3, Name="Boxing", Trainer="Mona", Day="Wed", Time="5 PM" }
-            };
+            LoadClasses();
         }
 
         public void OnPost()
         {
-            
-            Classes = new List<ClassItem>
+            if (SelectedClassId == 0)
             {
-                new ClassItem { Id = 1, Name="Yoga", Trainer="Sara", Day="Mon", Time="9 AM" },
-                new ClassItem { Id = 2, Name="HIIT", Trainer="Ali", Day="Tue", Time="10 AM" },
-                new ClassItem { Id = 3, Name="Boxing", Trainer="Mona", Day="Wed", Time="5 PM" }
-            };
-
-            var selectedClass = Classes.Find(c => c.Id == SelectedClassId);
-
-            if (selectedClass != null)
-            {
-                Message = $"You successfully joined {selectedClass.Name} ({selectedClass.Day} - {selectedClass.Time})";
+                Message = "Please select a class to join.";
+                MessageType = "danger";
+                LoadClasses();
+                return;
             }
-            else
+
+            try
             {
-                Message = "Please select a class.";
+                using (SqlConnection con = new SqlConnection(_connectionString))
+                {
+                    con.Open();
+
+                    
+
+                    string query = @"INSERT INTO Class_Enrollment (Class_ID, Member_ID, Trainer_ID, Enrollment_Date)
+                                     SELECT Class_ID, 1, Trainer_ID, GETDATE()
+                                     FROM Class
+                                     WHERE Class_ID = @ClassId";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ClassId", SelectedClassId);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            Message = "Successfully enrolled in the class!";
+                            MessageType = "success";
+                        }
+                        else
+                        {
+                            Message = "Error: Class not found.";
+                            MessageType = "danger";
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+               
+                Message = "Error booking class: " + ex.Message;
+                MessageType = "danger";
+            }
+
+            
+            LoadClasses();
+        }
+
+        private void LoadClasses()
+        {
+            Classes = new List<ClassItem>(); 
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                con.Open();
+                
+                string sql = "SELECT Class_ID, Class_Name, Date, Start_Time FROM Class";
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Classes.Add(new ClassItem
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                ClassDate = reader.GetDateTime(2).ToString("yyyy-MM-dd"),
+                                StartTime = reader.GetTimeSpan(3).ToString(@"hh\:mm")
+                            });
+                        }
+                    }
+                }
             }
         }
 
@@ -49,9 +112,8 @@ namespace FCMS_Phase1.Pages.Classes
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public string Trainer { get; set; }
-            public string Day { get; set; }
-            public string Time { get; set; }
+            public string ClassDate { get; set; }
+            public string StartTime { get; set; }
         }
     }
 }

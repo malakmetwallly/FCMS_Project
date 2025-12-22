@@ -1,43 +1,114 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Linq;
+using Microsoft.Extensions.Configuration;
+using System;
 
-namespace FCMS_Phase1.Pages.Classes
+namespace FCMS_Project.Pages.Classes
 {
     public class AttendanceModel : PageModel
     {
-        public List<ClassItem> Classes { get; set; }
-        public List<MemberItem> Members { get; set; }
+        private readonly string _connectionString;
 
-        public List<string> PresentMembers { get; set; }
+        public AttendanceModel(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
+        public List<ClassItem> Classes { get; set; } = new List<ClassItem>();
+        public List<MemberItem> Members { get; set; } = new List<MemberItem>();
+
+        [BindProperty]
+        public int SelectedClassId { get; set; }
+
+        [BindProperty]
+        public List<int> SelectedMembers { get; set; }
 
         public void OnGet()
         {
-            Classes = new List<ClassItem>
-            {
-                new ClassItem { Id = 1, Name="Yoga", Trainer="Sara", Day="Mon", Time="9 AM" },
-                new ClassItem { Id = 2, Name="HIIT", Trainer="Ali", Day="Tue", Time="10 AM" },
-                new ClassItem { Id = 3, Name="Boxing", Trainer="Mona", Day="Wed", Time="5 PM" }
-            };
-
-            Members = new List<MemberItem>
-            {
-                new MemberItem { Id=1, Name="Ahmed" },
-                new MemberItem { Id=2, Name="Mona" },
-                new MemberItem { Id=3, Name="Omar" },
-                new MemberItem { Id=4, Name="Sara" }
-            };
-
-            PresentMembers = new List<string>(); 
+            LoadData();
         }
 
-        
+        public IActionResult OnPost()
+        {
+            if (SelectedMembers == null || SelectedMembers.Count == 0)
+            {
+                LoadData();
+                return Page();
+            }
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                con.Open();
+                foreach (int memberId in SelectedMembers)
+                {
+                    
+
+                    string query = @"INSERT INTO Attendance 
+                                    (Member_ID, Receptionist_ID, Date, Time_In, Status) 
+                                    VALUES 
+                                    (@MemberId, 1, GETDATE(), CONVERT(TIME, GETDATE()), 'Present')";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", memberId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            return RedirectToPage("/Index");
+        }
+
+        private void LoadData()
+        {
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                con.Open();
+
+                
+                string sqlClasses = "SELECT Class_ID, Class_Name, Date, Start_Time, End_Time FROM Class";
+                using (SqlCommand cmd = new SqlCommand(sqlClasses, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Classes.Add(new ClassItem
+                            {
+                                Id = reader.GetInt32(0), 
+                                Name = reader.GetString(1), 
+                                ClassDate = reader.GetDateTime(2).ToString("yyyy-MM-dd"), 
+                                Time = reader.GetTimeSpan(3).ToString()
+                            });
+                        }
+                    }
+                }
+
+                string sqlMembers = "SELECT Member_ID, Name FROM Member";
+                using (SqlCommand cmd = new SqlCommand(sqlMembers, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Members.Add(new MemberItem
+                            {
+                                Id = reader.GetInt32(0), 
+                                Name = reader.GetString(1) 
+                            });
+                        }
+                    }
+                }
+            }
+        }
+
         public class ClassItem
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public string Trainer { get; set; }
-            public string Day { get; set; }
+            public string ClassDate { get; set; }
             public string Time { get; set; }
         }
 
