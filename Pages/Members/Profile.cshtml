@@ -1,31 +1,42 @@
-@page "{id:int}"
-@model MemberWebApp.Pages.Members.ProfileModel
+﻿@page "{id:int}"
+@model FCMS_Project.Pages.Members.ProfileModel
 
-<h1>@Model.Member.Name's Profile</h1>
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-body">
 
-<dl class="row">
-    <dt class="col-sm-2">Member ID</dt>
-    <dd class="col-sm-10">@Model.Member.Member_ID</dd>
-    <dt class="col-sm-2">Email</dt>
-    <dd class="col-sm-10">@Model.Member.Email</dd>
-    <dt class="col-sm-2">Phone</dt>
-    <dd class="col-sm-10">@Model.Member.Phone</dd>
-    <dt class="col-sm-2">Weight</dt>
-    <dd class="col-sm-10">@Model.Member.Weight kg</dd>
-    <dt class="col-sm-2">Height</dt>
-    <dd class="col-sm-10">@Model.Member.Height cm</dd>
-    <dt class="col-sm-2">Age</dt>
-    <dd class="col-sm-10">@Model.Member.Age</dd>
-    <dt class="col-sm-2">Gender</dt>
-    <dd class="col-sm-10">@Model.Member.Gender</dd>
-    <dt class="col-sm-2">Join Date</dt>
-    <dd class="col-sm-10">@Model.Member.Join_Date.ToShortDateString()</dd>
-    <dt class="col-sm-2">Membership Type</dt>
-    <dd class="col-sm-10">@Model.Member.Membership_Type</dd>
-    <dt class="col-sm-2">Goal</dt>
-    <dd class="col-sm-10">@Model.Member.Goal</dd>
-    <dt class="col-sm-2">Last Updated</dt>
-    <dd class="col-sm-10">@Model.Member.Last_Updated.ToShortDateString()</dd>
-    <dt class="col-sm-2">Assigned Trainer</dt>
-    <dd class="col-sm-10">@(Model.Trainer?.Name ?? "Not Assigned")</dd>
-</dl>
+            <h3 class="text-primary fw-bold">
+                Member Profile
+            </h3>
+            <hr />
+
+            <p><b>Name:</b> @Model.Name</p>
+            <p><b>Age:</b> @Model.Age</p>
+            <p><b>Height:</b> @Model.Height cm</p>
+            <p><b>Weight:</b> @Model.Weight kg</p>
+            <p><b>Goal:</b> @Model.Goal</p>
+            <p><b>Trainer:</b> @Model.Trainer</p>
+
+            <p>
+                <b>Payment:</b>
+                <span class="badge @(Model.HasPaid ? "bg-success" : "bg-danger")">
+                    @(Model.HasPaid ? "Paid" : "Not Paid")
+                </span>
+            </p>
+
+            <p>
+                <b>Status:</b>
+                <span class="badge bg-info">
+                    @(Model.IsCheckedIn ? "Checked In" : "Checked Out")
+                </span>
+            </p>
+
+            <a asp-page="/Members/Index"
+               class="btn btn-secondary mt-3">
+                Back
+            </a>
+
+        </div>
+    </div>
+</div>
+

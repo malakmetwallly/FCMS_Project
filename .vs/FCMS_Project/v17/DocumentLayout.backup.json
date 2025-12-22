@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\pages\\members\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:pages\\members\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\pages\\members\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:pages\\members\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\pages\\members\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:pages\\members\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\pages\\members\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:pages\\members\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|c:\\users\\vga pc\\source\\repos\\fcms_project\\pages\\members\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D272C5FC-0C2D-E31C-7CDF-5283BD6312CE}|FCMS_Project.csproj|solutionrelative:pages\\members\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Members\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Register.cshtml.cs",
+              "RelativeToolTip": "Pages\\Members\\Register.cshtml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAASwDQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T18:55:13.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Members\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Profile.cshtml",
+              "RelativeToolTip": "Pages\\Members\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:08:19.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Members\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Members\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:08:15.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Login.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Members\\Login.cshtml",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Login.cshtml",
+              "RelativeToolTip": "Pages\\Members\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:06:21.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Register.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Members\\Register.cshtml",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Pages\\Members\\Register.cshtml",
+              "RelativeToolTip": "Pages\\Members\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T18:04:46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T18:01:51.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-22T17:26:15.919Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

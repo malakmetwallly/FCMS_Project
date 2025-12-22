@@ -1,39 +1,29 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MemberWebApp.Data;
-using MemberWebApp.Models;
-using Microsoft.EntityFrameworkCore;
 
-namespace MemberWebApp.Pages.Members
+namespace FCMS_Project.Pages.Members
 {
     public class ProfileModel : PageModel
     {
-        private readonly FcmsContext _context;
+        public string Name { get; set; } = string.Empty;
+        public int Age { get; set; }
+        public int Height { get; set; }
+        public decimal Weight { get; set; }
+        public string Goal { get; set; } = string.Empty;
+        public string Trainer { get; set; } = string.Empty;
+        public bool HasPaid { get; set; }
+        public bool IsCheckedIn { get; set; }
 
-        public ProfileModel(FcmsContext context)
+        public void OnGet(int id)
         {
-            _context = context;
-        }
-
-        public Member Member { get; set; }
-        public Trainer Trainer { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(int id)
-        {
-            Member = await _context.Members.FindAsync(id);
-
-            if (Member == null)
-            {
-                return NotFound();
-            }
-
-            var workoutPlan = await _context.Workout_Plans.FirstOrDefaultAsync(p => p.Member_ID == id);
-            if (workoutPlan != null)
-            {
-                Trainer = await _context.Trainers.FindAsync(workoutPlan.Trainer_ID);
-            }
-
-            return Page();
+            // Dummy data
+            Name = "John Doe";
+            Age = 25;
+            Height = 175;
+            Weight = 78;
+            Goal = "Weight Loss";
+            Trainer = "Captain Ahmed";
+            HasPaid = true;
+            IsCheckedIn = false;
         }
     }
 }
