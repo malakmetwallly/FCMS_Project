@@ -1,0 +1,45 @@
+@page "{id:int}"
+@model AssignDietPlanModel
+@{
+    ViewData["Title"] = "Assign Diet Plan";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h3 class="mb-0">Assign Diet Plan</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="TrainerId" value="1" />
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Member Name</label>
+                        <input type="text" class="form-control" asp-for="MemberName" readonly />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Daily Calories (kcal)</label>
+                        <input type="number" class="form-control" asp-for="DailyCalories" required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Water Intake Goal (Liters)</label>
+                        <input type="number" class="form-control" asp-for="WaterGoal" step="1" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Allergies</label>
+                        <input type="text" class="form-control" asp-for="Allergies" placeholder="e.g. Peanuts, Dairy, None" />
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success">Save Diet Plan</button>
+                    <a asp-page="/Dashboard" class="btn btn-outline-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
