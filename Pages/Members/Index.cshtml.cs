@@ -1,35 +1,61 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MemberWebApp.Data;
-using MemberWebApp.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 
-namespace MemberWebApp.Pages.Members
+namespace FCMS_Project.Pages.Members
 {
     public class IndexModel : PageModel
     {
-        private readonly FcmsContext _context;
+        private readonly IConfiguration _configuration;
 
-        public IndexModel(FcmsContext context)
+        public IndexModel(IConfiguration configuration)
         {
-            _context = context;
+            _configuration = configuration;
         }
 
-        public IList<Member> Members { get; set; }
+        public List<Member> Members { get; set; } = new();
 
         [BindProperty(SupportsGet = true)]
-        public string Search { get; set; }
+        public int? SearchId { get; set; }
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
-            var query = _context.Members.AsQueryable();
+            string cs = _configuration.GetConnectionString("DefaultConnection");
 
-            if (!string.IsNullOrEmpty(Search))
+            using SqlConnection conn = new SqlConnection(cs);
+            conn.Open();
+
+            string sql = @"
+                SELECT Member_ID, Name, Age, Goal, Membership_Type
+                FROM Member
+            ";
+
+            if (SearchId.HasValue)
             {
-                query = query.Where(m => EF.Functions.Like(m.Name, $"%{Search}%"));
+                sql += " WHERE Member_ID = @id";
             }
 
-            Members = await query.ToListAsync();
+            using SqlCommand cmd = new SqlCommand(sql, conn);
+
+            if (SearchId.HasValue)
+            {
+                cmd.Parameters.AddWithValue("@id", SearchId.Value);
+            }
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Members.Add(new Member
+                {
+                    Member_ID = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    Age = reader.GetInt32(2),
+                    Goal = reader.GetString(3),
+                    Membership_Type = reader.GetString(4)
+                });
+            }
         }
     }
 }

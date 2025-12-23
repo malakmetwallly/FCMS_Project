@@ -1,38 +1,124 @@
-@page
-@model MemberWebApp.Pages.Members.IndexModel
+﻿@page
+@model FCMS_Project.Pages.Members.IndexModel
 
-<h1>All Members</h1>
+@{
+    ViewData["Title"] = "Reception Dashboard";
+}
 
-<form method="get">
-    <div class="form-group">
-        <label>Search by Name:</label>
-        <input asp-for="Search" class="form-control" />
-        <button type="submit" class="btn btn-primary">Search</button>
+<div class="container mt-5">
+
+    <div class="card shadow border-0">
+        <div class="card-body">
+
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h3 class="text-primary fw-bold mb-0">
+                        Reception – Dashboard
+                    </h3>
+                    <p class="text-muted">
+                        Search, check-in, and manage members
+                    </p>
+                </div>
+
+                <div>
+                    <a asp-page="/Members/Register"
+                       class="btn btn-success me-2">
+                        + Register New Member
+                    </a>
+
+                    <a asp-page="/Logout"
+                       class="btn btn-outline-danger">
+                        Logout
+                    </a>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Search -->
+            <form method="get" class="mb-4">
+                <div class="input-group">
+                    <input type="number"
+                           class="form-control"
+                           name="SearchId"
+                           placeholder="Search by Member ID"
+                           value="@Model.SearchId" />
+
+                    <button class="btn btn-primary" type="submit">
+                        Search
+                    </button>
+                </div>
+            </form>
+
+            <!-- Members Table -->
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Trainer</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model.Members != null && Model.Members.Count > 0)
+                    {
+                        foreach (var m in Model.Members)
+                        {
+                            <tr>
+                                <td>@m.Member_ID</td>
+                                <td>@m.Name</td>
+
+                                <!-- Trainer (placeholder for now) -->
+                                <td>
+                                    <span class="text-muted">Not Assigned</span>
+                                </td>
+
+                                <!-- Payment -->
+                                <td>
+                                    <span class="badge bg-success">
+                                        Paid
+                                    </span>
+                                </td>
+
+                                <!-- Status -->
+                                <td>
+                                    <span class="badge bg-secondary">
+                                        Checked Out
+                                    </span>
+                                </td>
+
+                                <!-- Actions -->
+                                <td class="text-center">
+                                    <a asp-page="/Members/Profile"
+                                       asp-route-id="@m.Member_ID"
+                                       class="btn btn-sm btn-outline-secondary">
+                                        View
+                                    </a>
+
+                                    <button class="btn btn-sm btn-outline-success ms-1">
+                                        Check In
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">
+                                No members found
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
     </div>
-</form>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Goal</th>
-            <th>Membership Type</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var member in Model.Members)
-        {
-            <tr>
-                <td>@member.Name</td>
-                <td>@member.Age</td>
-                <td>@member.Goal</td>
-                <td>@member.Membership_Type</td>
-                <td>
-                    <a asp-page="Profile" asp-route-id="@member.Member_ID">View Profile</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>

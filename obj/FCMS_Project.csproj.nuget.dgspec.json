@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\malak\\source\\repos\\FCMS_Project\\FCMS_Project\\FCMS_Project.csproj": {}
+    "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\FCMS_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\malak\\source\\repos\\FCMS_Project\\FCMS_Project\\FCMS_Project.csproj": {
+    "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\FCMS_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\malak\\source\\repos\\FCMS_Project\\FCMS_Project\\FCMS_Project.csproj",
+        "projectUniqueName": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\FCMS_Project.csproj",
         "projectName": "FCMS_Project",
-        "projectPath": "C:\\Users\\malak\\source\\repos\\FCMS_Project\\FCMS_Project\\FCMS_Project.csproj",
-        "packagesPath": "C:\\Users\\malak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\malak\\source\\repos\\FCMS_Project\\FCMS_Project\\obj\\",
+        "projectPath": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\FCMS_Project.csproj",
+        "packagesPath": "C:\\Users\\VGA PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\VGA PC\\source\\repos\\FCMS_Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\malak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VGA PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +49,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.3, )"
+            },
+            "Microsoft.Data.SqlClient.SNI.runtime": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "WebGrease": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -69,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
