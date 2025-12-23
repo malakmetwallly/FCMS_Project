@@ -7,9 +7,24 @@
 <h1 class="text-center mb-4">Admin Dashboard</h1>
 
 <div class="row text-center mb-4">
-    <div class="col-md-4"><div class="card p-3 bg-light"><h3>15</h3><p>Trainers</p></div></div>
-    <div class="col-md-4"><div class="card p-3 bg-light"><h3>42</h3><p>Members</p></div></div>
-    <div class="col-md-4"><div class="card p-3 bg-light"><h3>50k</h3><p>Revenue</p></div></div>
+    <div class="col-md-4">
+        <div class="card p-3 bg-light">
+            <h3>@Model.TotalTrainers</h3>
+            <p>Trainers</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 bg-light">
+            <h3>@Model.TotalMembers</h3>
+            <p>Members</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 bg-light">
+            <h3>@Model.EstRevenue</h3>
+            <p>Revenue</p>
+        </div>
+    </div>
 </div>
 
 <div class="row">

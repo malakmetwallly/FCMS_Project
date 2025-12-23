@@ -32,10 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRmVlZGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/malak/source/repos/FCMS_Project/FCMS_Project/Pages/Admin/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTG9naW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/malak/source/repos/FCMS_Project/FCMS_Project/Pages/Admin/ManageStaff.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlU3RhZmYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/malak/source/repos/FCMS_Project/FCMS_Project/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/malak/source/repos/FCMS_Project/FCMS_Project/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/malak/source/repos/FCMS_Project/FCMS_Project/Pages/Members/Index.cshtml]

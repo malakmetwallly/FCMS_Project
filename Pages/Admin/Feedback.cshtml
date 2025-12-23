@@ -16,16 +16,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>The AC in the cardio room is broken.</td>
-                <td>2025-12-10</td>
-            </tr>
-            <tr>
-                <td>Sarah Ali</td>
-                <td>Great yoga class today!</td>
-                <td>2025-12-11</td>
-            </tr>
+            @foreach (var item in Model.FeedbackList)
+            {
+                <tr>
+                    <td>@item.MemberName</td>
+                    <td>@item.Message</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                </tr>
+            }
         </tbody>
     </table>
     <a asp-page="/Admin/Dashboard" class="btn btn-secondary">Back to Dashboard</a>

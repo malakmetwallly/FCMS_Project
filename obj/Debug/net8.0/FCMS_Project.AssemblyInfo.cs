@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FCMS_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d74180d236ca368ff51242cd2d8e79ce5386a22")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97e307851404e644edbecdc8203be49560604dfc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FCMS_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FCMS_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
